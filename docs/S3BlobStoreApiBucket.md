@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Region** | **string** | The AWS region to create a new S3 bucket in or an existing S3 bucket&#39;s region | 
-**Name** | **string** | The name of the S3 bucket | 
-**Prefix** | Pointer to **string** | The S3 blob store (i.e S3 object) key prefix | [optional] 
-**Expiration** | **int32** | How many days until deleted blobs are finally removed from the S3 bucket (-1 to disable) | 
+**Region** | **string** | The AWS region to create a new S3 bucket in or an existing S3 bucket&#39;s region | [readonly] 
+**Name** | **string** | The name of the S3 bucket | [readonly] 
+**Prefix** | Pointer to **string** | The S3 blob store (i.e S3 object) key prefix | [optional] [readonly] 
+**Expiration** | **int32** | How many days until deleted blobs are finally removed from the S3 bucket (-1 to disable) | [readonly] 
 
 ## Methods
 

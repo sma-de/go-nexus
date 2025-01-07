@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SystemInitiated** | Pointer to **bool** |  | [optional] 
 **SummaryReason** | Pointer to **string** |  | [optional] 
+**SystemInitiated** | Pointer to **bool** |  | [optional] 
 **Frozen** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewReadOnlyStateWithDefaults instantiates a new ReadOnlyState object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSystemInitiated
-
-`func (o *ReadOnlyState) GetSystemInitiated() bool`
-
-GetSystemInitiated returns the SystemInitiated field if non-nil, zero value otherwise.
-
-### GetSystemInitiatedOk
-
-`func (o *ReadOnlyState) GetSystemInitiatedOk() (*bool, bool)`
-
-GetSystemInitiatedOk returns a tuple with the SystemInitiated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSystemInitiated
-
-`func (o *ReadOnlyState) SetSystemInitiated(v bool)`
-
-SetSystemInitiated sets SystemInitiated field to given value.
-
-### HasSystemInitiated
-
-`func (o *ReadOnlyState) HasSystemInitiated() bool`
-
-HasSystemInitiated returns a boolean if a field has been set.
 
 ### GetSummaryReason
 
@@ -76,6 +51,31 @@ SetSummaryReason sets SummaryReason field to given value.
 `func (o *ReadOnlyState) HasSummaryReason() bool`
 
 HasSummaryReason returns a boolean if a field has been set.
+
+### GetSystemInitiated
+
+`func (o *ReadOnlyState) GetSystemInitiated() bool`
+
+GetSystemInitiated returns the SystemInitiated field if non-nil, zero value otherwise.
+
+### GetSystemInitiatedOk
+
+`func (o *ReadOnlyState) GetSystemInitiatedOk() (*bool, bool)`
+
+GetSystemInitiatedOk returns a tuple with the SystemInitiated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSystemInitiated
+
+`func (o *ReadOnlyState) SetSystemInitiated(v bool)`
+
+SetSystemInitiated sets SystemInitiated field to given value.
+
+### HasSystemInitiated
+
+`func (o *ReadOnlyState) HasSystemInitiated() bool`
+
+HasSystemInitiated returns a boolean if a field has been set.
 
 ### GetFrozen
 

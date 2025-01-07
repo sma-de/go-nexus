@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ClassLoaderName** | Pointer to **string** |  | [optional] 
+**ModuleName** | Pointer to **string** |  | [optional] 
+**ModuleVersion** | Pointer to **string** |  | [optional] 
 **MethodName** | Pointer to **string** |  | [optional] 
 **FileName** | Pointer to **string** |  | [optional] 
 **LineNumber** | Pointer to **int32** |  | [optional] 
-**ClassName** | Pointer to **string** |  | [optional] 
 **NativeMethod** | Pointer to **bool** |  | [optional] 
+**ClassName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,6 +31,81 @@ will change when the set of required properties is changed
 NewStackTraceElementWithDefaults instantiates a new StackTraceElement object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetClassLoaderName
+
+`func (o *StackTraceElement) GetClassLoaderName() string`
+
+GetClassLoaderName returns the ClassLoaderName field if non-nil, zero value otherwise.
+
+### GetClassLoaderNameOk
+
+`func (o *StackTraceElement) GetClassLoaderNameOk() (*string, bool)`
+
+GetClassLoaderNameOk returns a tuple with the ClassLoaderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClassLoaderName
+
+`func (o *StackTraceElement) SetClassLoaderName(v string)`
+
+SetClassLoaderName sets ClassLoaderName field to given value.
+
+### HasClassLoaderName
+
+`func (o *StackTraceElement) HasClassLoaderName() bool`
+
+HasClassLoaderName returns a boolean if a field has been set.
+
+### GetModuleName
+
+`func (o *StackTraceElement) GetModuleName() string`
+
+GetModuleName returns the ModuleName field if non-nil, zero value otherwise.
+
+### GetModuleNameOk
+
+`func (o *StackTraceElement) GetModuleNameOk() (*string, bool)`
+
+GetModuleNameOk returns a tuple with the ModuleName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModuleName
+
+`func (o *StackTraceElement) SetModuleName(v string)`
+
+SetModuleName sets ModuleName field to given value.
+
+### HasModuleName
+
+`func (o *StackTraceElement) HasModuleName() bool`
+
+HasModuleName returns a boolean if a field has been set.
+
+### GetModuleVersion
+
+`func (o *StackTraceElement) GetModuleVersion() string`
+
+GetModuleVersion returns the ModuleVersion field if non-nil, zero value otherwise.
+
+### GetModuleVersionOk
+
+`func (o *StackTraceElement) GetModuleVersionOk() (*string, bool)`
+
+GetModuleVersionOk returns a tuple with the ModuleVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModuleVersion
+
+`func (o *StackTraceElement) SetModuleVersion(v string)`
+
+SetModuleVersion sets ModuleVersion field to given value.
+
+### HasModuleVersion
+
+`func (o *StackTraceElement) HasModuleVersion() bool`
+
+HasModuleVersion returns a boolean if a field has been set.
 
 ### GetMethodName
 
@@ -104,31 +182,6 @@ SetLineNumber sets LineNumber field to given value.
 
 HasLineNumber returns a boolean if a field has been set.
 
-### GetClassName
-
-`func (o *StackTraceElement) GetClassName() string`
-
-GetClassName returns the ClassName field if non-nil, zero value otherwise.
-
-### GetClassNameOk
-
-`func (o *StackTraceElement) GetClassNameOk() (*string, bool)`
-
-GetClassNameOk returns a tuple with the ClassName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClassName
-
-`func (o *StackTraceElement) SetClassName(v string)`
-
-SetClassName sets ClassName field to given value.
-
-### HasClassName
-
-`func (o *StackTraceElement) HasClassName() bool`
-
-HasClassName returns a boolean if a field has been set.
-
 ### GetNativeMethod
 
 `func (o *StackTraceElement) GetNativeMethod() bool`
@@ -153,6 +206,31 @@ SetNativeMethod sets NativeMethod field to given value.
 `func (o *StackTraceElement) HasNativeMethod() bool`
 
 HasNativeMethod returns a boolean if a field has been set.
+
+### GetClassName
+
+`func (o *StackTraceElement) GetClassName() string`
+
+GetClassName returns the ClassName field if non-nil, zero value otherwise.
+
+### GetClassNameOk
+
+`func (o *StackTraceElement) GetClassNameOk() (*string, bool)`
+
+GetClassNameOk returns a tuple with the ClassName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClassName
+
+`func (o *StackTraceElement) SetClassName(v string)`
+
+SetClassName sets ClassName field to given value.
+
+### HasClassName
+
+`func (o *StackTraceElement) HasClassName() bool`
+
+HasClassName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

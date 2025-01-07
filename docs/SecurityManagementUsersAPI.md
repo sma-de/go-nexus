@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**ChangePassword**](SecurityManagementUsersAPI.md#ChangePassword) | **Put** /v1/security/users/{userId}/change-password | Change a user&#39;s password.
 [**CreateUser**](SecurityManagementUsersAPI.md#CreateUser) | **Post** /v1/security/users | Create a new user in the default source.
 [**DeleteUser**](SecurityManagementUsersAPI.md#DeleteUser) | **Delete** /v1/security/users/{userId} | Delete a user.
-[**GetUsers**](SecurityManagementUsersAPI.md#GetUsers) | **Get** /v1/security/users | Retrieve a list of users. Note if the source is not &#39;default&#39; the response is limited to 100 users.
+[**GetUsers**](SecurityManagementUsersAPI.md#GetUsers) | **Get** /v1/security/users | Retrieve a list of users.
 [**Reset**](SecurityManagementUsersAPI.md#Reset) | **Delete** /v1/security/users/{userId}/{realm}/user-token-reset | Reset the user token for the given user.
 [**UpdateUser**](SecurityManagementUsersAPI.md#UpdateUser) | **Put** /v1/security/users/{userId} | Update an existing user.
 
@@ -217,7 +217,7 @@ No authorization required
 
 > []ApiUser GetUsers(ctx).UserId(userId).Source(source).Execute()
 
-Retrieve a list of users. Note if the source is not 'default' the response is limited to 100 users.
+Retrieve a list of users.
 
 ### Example
 

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **UploaderIp** | Pointer to **string** |  | [optional] 
 **FileSize** | Pointer to **int64** |  | [optional] 
 **BlobCreated** | Pointer to **time.Time** |  | [optional] 
+**BlobStoreName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -361,6 +362,31 @@ SetBlobCreated sets BlobCreated field to given value.
 `func (o *AssetXO) HasBlobCreated() bool`
 
 HasBlobCreated returns a boolean if a field has been set.
+
+### GetBlobStoreName
+
+`func (o *AssetXO) GetBlobStoreName() string`
+
+GetBlobStoreName returns the BlobStoreName field if non-nil, zero value otherwise.
+
+### GetBlobStoreNameOk
+
+`func (o *AssetXO) GetBlobStoreNameOk() (*string, bool)`
+
+GetBlobStoreNameOk returns a tuple with the BlobStoreName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlobStoreName
+
+`func (o *AssetXO) SetBlobStoreName(v string)`
+
+SetBlobStoreName sets BlobStoreName field to given value.
+
+### HasBlobStoreName
+
+`func (o *AssetXO) HasBlobStoreName() bool`
+
+HasBlobStoreName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

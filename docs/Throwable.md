@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Cause** | Pointer to [**Throwable**](Throwable.md) |  | [optional] 
 **StackTrace** | Pointer to [**[]StackTraceElement**](StackTraceElement.md) |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
-**LocalizedMessage** | Pointer to **string** |  | [optional] 
 **Suppressed** | Pointer to [**[]Throwable**](Throwable.md) |  | [optional] 
+**LocalizedMessage** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -104,31 +104,6 @@ SetMessage sets Message field to given value.
 
 HasMessage returns a boolean if a field has been set.
 
-### GetLocalizedMessage
-
-`func (o *Throwable) GetLocalizedMessage() string`
-
-GetLocalizedMessage returns the LocalizedMessage field if non-nil, zero value otherwise.
-
-### GetLocalizedMessageOk
-
-`func (o *Throwable) GetLocalizedMessageOk() (*string, bool)`
-
-GetLocalizedMessageOk returns a tuple with the LocalizedMessage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLocalizedMessage
-
-`func (o *Throwable) SetLocalizedMessage(v string)`
-
-SetLocalizedMessage sets LocalizedMessage field to given value.
-
-### HasLocalizedMessage
-
-`func (o *Throwable) HasLocalizedMessage() bool`
-
-HasLocalizedMessage returns a boolean if a field has been set.
-
 ### GetSuppressed
 
 `func (o *Throwable) GetSuppressed() []Throwable`
@@ -153,6 +128,31 @@ SetSuppressed sets Suppressed field to given value.
 `func (o *Throwable) HasSuppressed() bool`
 
 HasSuppressed returns a boolean if a field has been set.
+
+### GetLocalizedMessage
+
+`func (o *Throwable) GetLocalizedMessage() string`
+
+GetLocalizedMessage returns the LocalizedMessage field if non-nil, zero value otherwise.
+
+### GetLocalizedMessageOk
+
+`func (o *Throwable) GetLocalizedMessageOk() (*string, bool)`
+
+GetLocalizedMessageOk returns a tuple with the LocalizedMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalizedMessage
+
+`func (o *Throwable) SetLocalizedMessage(v string)`
+
+SetLocalizedMessage sets LocalizedMessage field to given value.
+
+### HasLocalizedMessage
+
+`func (o *Throwable) HasLocalizedMessage() bool`
+
+HasLocalizedMessage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

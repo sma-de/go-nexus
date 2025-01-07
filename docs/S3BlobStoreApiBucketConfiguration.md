@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bucket** | [**S3BlobStoreApiBucket**](S3BlobStoreApiBucket.md) |  | 
 **Encryption** | Pointer to [**S3BlobStoreApiEncryption**](S3BlobStoreApiEncryption.md) |  | [optional] 
+**FailoverBuckets** | Pointer to [**[]S3BlobStoreApiFailoverBucket**](S3BlobStoreApiFailoverBucket.md) | A list of secondary buckets which have bidirectional replication enabled and should be used when Nexus is running in the region | [optional] 
+**ActiveRegion** | Pointer to **string** | The active region based on bucket configuration, failover buckets, and EC2 region Nexus is running. | [optional] [readonly] 
 **BucketSecurity** | Pointer to [**S3BlobStoreApiBucketSecurity**](S3BlobStoreApiBucketSecurity.md) |  | [optional] 
 **AdvancedBucketConnection** | Pointer to [**S3BlobStoreApiAdvancedBucketConnection**](S3BlobStoreApiAdvancedBucketConnection.md) |  | [optional] 
 
@@ -72,6 +74,56 @@ SetEncryption sets Encryption field to given value.
 `func (o *S3BlobStoreApiBucketConfiguration) HasEncryption() bool`
 
 HasEncryption returns a boolean if a field has been set.
+
+### GetFailoverBuckets
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetFailoverBuckets() []S3BlobStoreApiFailoverBucket`
+
+GetFailoverBuckets returns the FailoverBuckets field if non-nil, zero value otherwise.
+
+### GetFailoverBucketsOk
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetFailoverBucketsOk() (*[]S3BlobStoreApiFailoverBucket, bool)`
+
+GetFailoverBucketsOk returns a tuple with the FailoverBuckets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFailoverBuckets
+
+`func (o *S3BlobStoreApiBucketConfiguration) SetFailoverBuckets(v []S3BlobStoreApiFailoverBucket)`
+
+SetFailoverBuckets sets FailoverBuckets field to given value.
+
+### HasFailoverBuckets
+
+`func (o *S3BlobStoreApiBucketConfiguration) HasFailoverBuckets() bool`
+
+HasFailoverBuckets returns a boolean if a field has been set.
+
+### GetActiveRegion
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetActiveRegion() string`
+
+GetActiveRegion returns the ActiveRegion field if non-nil, zero value otherwise.
+
+### GetActiveRegionOk
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetActiveRegionOk() (*string, bool)`
+
+GetActiveRegionOk returns a tuple with the ActiveRegion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActiveRegion
+
+`func (o *S3BlobStoreApiBucketConfiguration) SetActiveRegion(v string)`
+
+SetActiveRegion sets ActiveRegion field to given value.
+
+### HasActiveRegion
+
+`func (o *S3BlobStoreApiBucketConfiguration) HasActiveRegion() bool`
+
+HasActiveRegion returns a boolean if a field has been set.
 
 ### GetBucketSecurity
 

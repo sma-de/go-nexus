@@ -24,22 +24,25 @@ Method | HTTP request | Description
 [**CreateRepository24**](RepositoryManagementAPI.md#CreateRepository24) | **Post** /v1/repositories/pypi/hosted | Create PyPI hosted repository
 [**CreateRepository25**](RepositoryManagementAPI.md#CreateRepository25) | **Post** /v1/repositories/pypi/proxy | Create PyPI proxy repository
 [**CreateRepository26**](RepositoryManagementAPI.md#CreateRepository26) | **Post** /v1/repositories/conda/proxy | Create conda proxy repository
-[**CreateRepository27**](RepositoryManagementAPI.md#CreateRepository27) | **Post** /v1/repositories/conan/proxy | Create Conan proxy repository
-[**CreateRepository28**](RepositoryManagementAPI.md#CreateRepository28) | **Post** /v1/repositories/gitlfs/hosted | Create Git LFS hosted repository
-[**CreateRepository29**](RepositoryManagementAPI.md#CreateRepository29) | **Post** /v1/repositories/r/group | Create R group repository
+[**CreateRepository27**](RepositoryManagementAPI.md#CreateRepository27) | **Post** /v1/repositories/conan/group | Create Conan group repository
+[**CreateRepository28**](RepositoryManagementAPI.md#CreateRepository28) | **Post** /v1/repositories/conan/hosted | Create Conan hosted repository
+[**CreateRepository29**](RepositoryManagementAPI.md#CreateRepository29) | **Post** /v1/repositories/conan/proxy | Create Conan proxy repository
 [**CreateRepository3**](RepositoryManagementAPI.md#CreateRepository3) | **Post** /v1/repositories/apt/hosted | Create APT hosted repository
-[**CreateRepository30**](RepositoryManagementAPI.md#CreateRepository30) | **Post** /v1/repositories/r/hosted | Create R hosted repository
-[**CreateRepository31**](RepositoryManagementAPI.md#CreateRepository31) | **Post** /v1/repositories/r/proxy | Create R proxy repository
-[**CreateRepository32**](RepositoryManagementAPI.md#CreateRepository32) | **Post** /v1/repositories/cocoapods/proxy | Create Cocoapods proxy repository
-[**CreateRepository33**](RepositoryManagementAPI.md#CreateRepository33) | **Post** /v1/repositories/go/group | Create a Go group repository
-[**CreateRepository34**](RepositoryManagementAPI.md#CreateRepository34) | **Post** /v1/repositories/go/proxy | Create a Go proxy repository
-[**CreateRepository35**](RepositoryManagementAPI.md#CreateRepository35) | **Post** /v1/repositories/p2/proxy | Create p2 proxy repository
-[**CreateRepository36**](RepositoryManagementAPI.md#CreateRepository36) | **Post** /v1/repositories/helm/hosted | Create Helm hosted repository
-[**CreateRepository37**](RepositoryManagementAPI.md#CreateRepository37) | **Post** /v1/repositories/helm/proxy | Create Helm proxy repository
-[**CreateRepository38**](RepositoryManagementAPI.md#CreateRepository38) | **Post** /v1/repositories/bower/group | Create Bower group repository
-[**CreateRepository39**](RepositoryManagementAPI.md#CreateRepository39) | **Post** /v1/repositories/bower/hosted | Create Bower hosted repository
+[**CreateRepository30**](RepositoryManagementAPI.md#CreateRepository30) | **Post** /v1/repositories/gitlfs/hosted | Create Git LFS hosted repository
+[**CreateRepository31**](RepositoryManagementAPI.md#CreateRepository31) | **Post** /v1/repositories/r/group | Create R group repository
+[**CreateRepository32**](RepositoryManagementAPI.md#CreateRepository32) | **Post** /v1/repositories/r/hosted | Create R hosted repository
+[**CreateRepository33**](RepositoryManagementAPI.md#CreateRepository33) | **Post** /v1/repositories/r/proxy | Create R proxy repository
+[**CreateRepository34**](RepositoryManagementAPI.md#CreateRepository34) | **Post** /v1/repositories/cocoapods/proxy | Create Cocoapods proxy repository
+[**CreateRepository35**](RepositoryManagementAPI.md#CreateRepository35) | **Post** /v1/repositories/go/group | Create a Go group repository
+[**CreateRepository36**](RepositoryManagementAPI.md#CreateRepository36) | **Post** /v1/repositories/go/proxy | Create a Go proxy repository
+[**CreateRepository37**](RepositoryManagementAPI.md#CreateRepository37) | **Post** /v1/repositories/p2/proxy | Create p2 proxy repository
+[**CreateRepository38**](RepositoryManagementAPI.md#CreateRepository38) | **Post** /v1/repositories/helm/hosted | Create Helm hosted repository
+[**CreateRepository39**](RepositoryManagementAPI.md#CreateRepository39) | **Post** /v1/repositories/helm/proxy | Create Helm proxy repository
 [**CreateRepository4**](RepositoryManagementAPI.md#CreateRepository4) | **Post** /v1/repositories/apt/proxy | Create APT proxy repository
-[**CreateRepository40**](RepositoryManagementAPI.md#CreateRepository40) | **Post** /v1/repositories/bower/proxy | Create Bower proxy repository
+[**CreateRepository40**](RepositoryManagementAPI.md#CreateRepository40) | **Post** /v1/repositories/cargo/group | Create cargo group repository
+[**CreateRepository41**](RepositoryManagementAPI.md#CreateRepository41) | **Post** /v1/repositories/cargo/hosted | Create cargo hosted repository
+[**CreateRepository42**](RepositoryManagementAPI.md#CreateRepository42) | **Post** /v1/repositories/cargo/proxy | Create cargo proxy repository
+[**CreateRepository43**](RepositoryManagementAPI.md#CreateRepository43) | **Post** /v1/repositories/composer/proxy | Create composer proxy repository
 [**CreateRepository5**](RepositoryManagementAPI.md#CreateRepository5) | **Post** /v1/repositories/raw/group | Create raw group repository
 [**CreateRepository6**](RepositoryManagementAPI.md#CreateRepository6) | **Post** /v1/repositories/raw/hosted | Create raw hosted repository
 [**CreateRepository7**](RepositoryManagementAPI.md#CreateRepository7) | **Post** /v1/repositories/raw/proxy | Create raw proxy repository
@@ -71,22 +74,25 @@ Method | HTTP request | Description
 [**GetRepository25**](RepositoryManagementAPI.md#GetRepository25) | **Get** /v1/repositories/pypi/hosted/{repositoryName} | Get repository
 [**GetRepository26**](RepositoryManagementAPI.md#GetRepository26) | **Get** /v1/repositories/pypi/proxy/{repositoryName} | Get repository
 [**GetRepository27**](RepositoryManagementAPI.md#GetRepository27) | **Get** /v1/repositories/conda/proxy/{repositoryName} | Get repository
-[**GetRepository28**](RepositoryManagementAPI.md#GetRepository28) | **Get** /v1/repositories/conan/proxy/{repositoryName} | Get repository
-[**GetRepository29**](RepositoryManagementAPI.md#GetRepository29) | **Get** /v1/repositories/gitlfs/hosted/{repositoryName} | Get repository
+[**GetRepository28**](RepositoryManagementAPI.md#GetRepository28) | **Get** /v1/repositories/conan/group/{repositoryName} | Get repository
+[**GetRepository29**](RepositoryManagementAPI.md#GetRepository29) | **Get** /v1/repositories/conan/hosted/{repositoryName} | Get repository
 [**GetRepository3**](RepositoryManagementAPI.md#GetRepository3) | **Get** /v1/repositories/maven/proxy/{repositoryName} | Get repository
-[**GetRepository30**](RepositoryManagementAPI.md#GetRepository30) | **Get** /v1/repositories/r/group/{repositoryName} | Get repository
-[**GetRepository31**](RepositoryManagementAPI.md#GetRepository31) | **Get** /v1/repositories/r/hosted/{repositoryName} | Get repository
-[**GetRepository32**](RepositoryManagementAPI.md#GetRepository32) | **Get** /v1/repositories/r/proxy/{repositoryName} | Get repository
-[**GetRepository33**](RepositoryManagementAPI.md#GetRepository33) | **Get** /v1/repositories/cocoapods/proxy/{repositoryName} | Get repository
-[**GetRepository34**](RepositoryManagementAPI.md#GetRepository34) | **Get** /v1/repositories/go/group/{repositoryName} | Get repository
-[**GetRepository35**](RepositoryManagementAPI.md#GetRepository35) | **Get** /v1/repositories/go/proxy/{repositoryName} | Get repository
-[**GetRepository36**](RepositoryManagementAPI.md#GetRepository36) | **Get** /v1/repositories/p2/proxy/{repositoryName} | Get repository
-[**GetRepository37**](RepositoryManagementAPI.md#GetRepository37) | **Get** /v1/repositories/helm/hosted/{repositoryName} | Get repository
-[**GetRepository38**](RepositoryManagementAPI.md#GetRepository38) | **Get** /v1/repositories/helm/proxy/{repositoryName} | Get repository
-[**GetRepository39**](RepositoryManagementAPI.md#GetRepository39) | **Get** /v1/repositories/bower/group/{repositoryName} | Get repository
+[**GetRepository30**](RepositoryManagementAPI.md#GetRepository30) | **Get** /v1/repositories/conan/proxy/{repositoryName} | Get repository
+[**GetRepository31**](RepositoryManagementAPI.md#GetRepository31) | **Get** /v1/repositories/gitlfs/hosted/{repositoryName} | Get repository
+[**GetRepository32**](RepositoryManagementAPI.md#GetRepository32) | **Get** /v1/repositories/r/group/{repositoryName} | Get repository
+[**GetRepository33**](RepositoryManagementAPI.md#GetRepository33) | **Get** /v1/repositories/r/hosted/{repositoryName} | Get repository
+[**GetRepository34**](RepositoryManagementAPI.md#GetRepository34) | **Get** /v1/repositories/r/proxy/{repositoryName} | Get repository
+[**GetRepository35**](RepositoryManagementAPI.md#GetRepository35) | **Get** /v1/repositories/cocoapods/proxy/{repositoryName} | Get repository
+[**GetRepository36**](RepositoryManagementAPI.md#GetRepository36) | **Get** /v1/repositories/go/group/{repositoryName} | Get repository
+[**GetRepository37**](RepositoryManagementAPI.md#GetRepository37) | **Get** /v1/repositories/go/proxy/{repositoryName} | Get repository
+[**GetRepository38**](RepositoryManagementAPI.md#GetRepository38) | **Get** /v1/repositories/p2/proxy/{repositoryName} | Get repository
+[**GetRepository39**](RepositoryManagementAPI.md#GetRepository39) | **Get** /v1/repositories/helm/hosted/{repositoryName} | Get repository
 [**GetRepository4**](RepositoryManagementAPI.md#GetRepository4) | **Get** /v1/repositories/apt/hosted/{repositoryName} | Get repository
-[**GetRepository40**](RepositoryManagementAPI.md#GetRepository40) | **Get** /v1/repositories/bower/hosted/{repositoryName} | Get repository
-[**GetRepository41**](RepositoryManagementAPI.md#GetRepository41) | **Get** /v1/repositories/bower/proxy/{repositoryName} | Get repository
+[**GetRepository40**](RepositoryManagementAPI.md#GetRepository40) | **Get** /v1/repositories/helm/proxy/{repositoryName} | Get repository
+[**GetRepository41**](RepositoryManagementAPI.md#GetRepository41) | **Get** /v1/repositories/cargo/group/{repositoryName} | Get repository
+[**GetRepository42**](RepositoryManagementAPI.md#GetRepository42) | **Get** /v1/repositories/cargo/hosted/{repositoryName} | Get repository
+[**GetRepository43**](RepositoryManagementAPI.md#GetRepository43) | **Get** /v1/repositories/cargo/proxy/{repositoryName} | Get repository
+[**GetRepository44**](RepositoryManagementAPI.md#GetRepository44) | **Get** /v1/repositories/composer/proxy/{repositoryName} | Get repository
 [**GetRepository5**](RepositoryManagementAPI.md#GetRepository5) | **Get** /v1/repositories/apt/proxy/{repositoryName} | Get repository
 [**GetRepository6**](RepositoryManagementAPI.md#GetRepository6) | **Get** /v1/repositories/raw/group/{repositoryName} | Get repository
 [**GetRepository7**](RepositoryManagementAPI.md#GetRepository7) | **Get** /v1/repositories/raw/hosted/{repositoryName} | Get repository
@@ -114,22 +120,25 @@ Method | HTTP request | Description
 [**UpdateRepository24**](RepositoryManagementAPI.md#UpdateRepository24) | **Put** /v1/repositories/pypi/hosted/{repositoryName} | Update PyPI hosted repository
 [**UpdateRepository25**](RepositoryManagementAPI.md#UpdateRepository25) | **Put** /v1/repositories/pypi/proxy/{repositoryName} | Update PyPI proxy repository
 [**UpdateRepository26**](RepositoryManagementAPI.md#UpdateRepository26) | **Put** /v1/repositories/conda/proxy/{repositoryName} | Update conda proxy repository
-[**UpdateRepository27**](RepositoryManagementAPI.md#UpdateRepository27) | **Put** /v1/repositories/conan/proxy/{repositoryName} | Update Conan proxy repository
-[**UpdateRepository28**](RepositoryManagementAPI.md#UpdateRepository28) | **Put** /v1/repositories/gitlfs/hosted/{repositoryName} | Update Git LFS hosted repository
-[**UpdateRepository29**](RepositoryManagementAPI.md#UpdateRepository29) | **Put** /v1/repositories/r/group/{repositoryName} | Update R group repository
+[**UpdateRepository27**](RepositoryManagementAPI.md#UpdateRepository27) | **Put** /v1/repositories/conan/group/{repositoryName} | Update Conan group repository
+[**UpdateRepository28**](RepositoryManagementAPI.md#UpdateRepository28) | **Put** /v1/repositories/conan/hosted/{repositoryName} | Update Conan hosted repository
+[**UpdateRepository29**](RepositoryManagementAPI.md#UpdateRepository29) | **Put** /v1/repositories/conan/proxy/{repositoryName} | Update Conan proxy repository
 [**UpdateRepository3**](RepositoryManagementAPI.md#UpdateRepository3) | **Put** /v1/repositories/apt/hosted/{repositoryName} | Update APT hosted repository
-[**UpdateRepository30**](RepositoryManagementAPI.md#UpdateRepository30) | **Put** /v1/repositories/r/hosted/{repositoryName} | Update R hosted repository
-[**UpdateRepository31**](RepositoryManagementAPI.md#UpdateRepository31) | **Put** /v1/repositories/r/proxy/{repositoryName} | Update R proxy repository
-[**UpdateRepository32**](RepositoryManagementAPI.md#UpdateRepository32) | **Put** /v1/repositories/cocoapods/proxy/{repositoryName} | Update Cocoapods proxy repository
-[**UpdateRepository33**](RepositoryManagementAPI.md#UpdateRepository33) | **Put** /v1/repositories/go/group/{repositoryName} | Update a Go group repository
-[**UpdateRepository34**](RepositoryManagementAPI.md#UpdateRepository34) | **Put** /v1/repositories/go/proxy/{repositoryName} | Update a Go proxy repository
-[**UpdateRepository35**](RepositoryManagementAPI.md#UpdateRepository35) | **Put** /v1/repositories/p2/proxy/{repositoryName} | Update p2 proxy repository
-[**UpdateRepository36**](RepositoryManagementAPI.md#UpdateRepository36) | **Put** /v1/repositories/helm/hosted/{repositoryName} | Update Helm hosted repository
-[**UpdateRepository37**](RepositoryManagementAPI.md#UpdateRepository37) | **Put** /v1/repositories/helm/proxy/{repositoryName} | Update Helm proxy repository
-[**UpdateRepository38**](RepositoryManagementAPI.md#UpdateRepository38) | **Put** /v1/repositories/bower/group/{repositoryName} | Update Bower group repository
-[**UpdateRepository39**](RepositoryManagementAPI.md#UpdateRepository39) | **Put** /v1/repositories/bower/hosted/{repositoryName} | Update Bower hosted repository
+[**UpdateRepository30**](RepositoryManagementAPI.md#UpdateRepository30) | **Put** /v1/repositories/gitlfs/hosted/{repositoryName} | Update Git LFS hosted repository
+[**UpdateRepository31**](RepositoryManagementAPI.md#UpdateRepository31) | **Put** /v1/repositories/r/group/{repositoryName} | Update R group repository
+[**UpdateRepository32**](RepositoryManagementAPI.md#UpdateRepository32) | **Put** /v1/repositories/r/hosted/{repositoryName} | Update R hosted repository
+[**UpdateRepository33**](RepositoryManagementAPI.md#UpdateRepository33) | **Put** /v1/repositories/r/proxy/{repositoryName} | Update R proxy repository
+[**UpdateRepository34**](RepositoryManagementAPI.md#UpdateRepository34) | **Put** /v1/repositories/cocoapods/proxy/{repositoryName} | Update Cocoapods proxy repository
+[**UpdateRepository35**](RepositoryManagementAPI.md#UpdateRepository35) | **Put** /v1/repositories/go/group/{repositoryName} | Update a Go group repository
+[**UpdateRepository36**](RepositoryManagementAPI.md#UpdateRepository36) | **Put** /v1/repositories/go/proxy/{repositoryName} | Update a Go proxy repository
+[**UpdateRepository37**](RepositoryManagementAPI.md#UpdateRepository37) | **Put** /v1/repositories/p2/proxy/{repositoryName} | Update p2 proxy repository
+[**UpdateRepository38**](RepositoryManagementAPI.md#UpdateRepository38) | **Put** /v1/repositories/helm/hosted/{repositoryName} | Update Helm hosted repository
+[**UpdateRepository39**](RepositoryManagementAPI.md#UpdateRepository39) | **Put** /v1/repositories/helm/proxy/{repositoryName} | Update Helm proxy repository
 [**UpdateRepository4**](RepositoryManagementAPI.md#UpdateRepository4) | **Put** /v1/repositories/apt/proxy/{repositoryName} | Update APT proxy repository
-[**UpdateRepository40**](RepositoryManagementAPI.md#UpdateRepository40) | **Put** /v1/repositories/bower/proxy/{repositoryName} | Update Bower proxy repository
+[**UpdateRepository40**](RepositoryManagementAPI.md#UpdateRepository40) | **Put** /v1/repositories/cargo/group/{repositoryName} | Update cargo group repository
+[**UpdateRepository41**](RepositoryManagementAPI.md#UpdateRepository41) | **Put** /v1/repositories/cargo/hosted/{repositoryName} | Update cargo hosted repository
+[**UpdateRepository42**](RepositoryManagementAPI.md#UpdateRepository42) | **Put** /v1/repositories/cargo/proxy/{repositoryName} | Update cargo proxy repository
+[**UpdateRepository43**](RepositoryManagementAPI.md#UpdateRepository43) | **Put** /v1/repositories/composer/proxy/{repositoryName} | Update composer proxy repository
 [**UpdateRepository5**](RepositoryManagementAPI.md#UpdateRepository5) | **Put** /v1/repositories/raw/group/{repositoryName} | Update raw group repository
 [**UpdateRepository6**](RepositoryManagementAPI.md#UpdateRepository6) | **Put** /v1/repositories/raw/hosted/{repositoryName} | Update raw hosted repository
 [**UpdateRepository7**](RepositoryManagementAPI.md#UpdateRepository7) | **Put** /v1/repositories/raw/proxy/{repositoryName} | Update raw proxy repository
@@ -1382,7 +1391,7 @@ No authorization required
 
 > CreateRepository27(ctx).Body(body).Execute()
 
-Create Conan proxy repository
+Create Conan group repository
 
 ### Example
 
@@ -1397,7 +1406,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewConanProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // ConanProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewConanGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupDeployAttributes()) // ConanGroupRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1420,7 +1429,7 @@ Other parameters are passed through a pointer to a apiCreateRepository27Request 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md) |  | 
+ **body** | [**ConanGroupRepositoryApiRequest**](ConanGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1444,7 +1453,7 @@ No authorization required
 
 > CreateRepository28(ctx).Body(body).Execute()
 
-Create Git LFS hosted repository
+Create Conan hosted repository
 
 ### Example
 
@@ -1459,7 +1468,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewGitLfsHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // GitLfsHostedRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewConanHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // ConanHostedRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1482,7 +1491,7 @@ Other parameters are passed through a pointer to a apiCreateRepository28Request 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GitLfsHostedRepositoryApiRequest**](GitLfsHostedRepositoryApiRequest.md) |  | 
+ **body** | [**ConanHostedRepositoryApiRequest**](ConanHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1506,7 +1515,7 @@ No authorization required
 
 > CreateRepository29(ctx).Body(body).Execute()
 
-Create R group repository
+Create Conan proxy repository
 
 ### Example
 
@@ -1521,7 +1530,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewRGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // RGroupRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewConanProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // ConanProxyRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1544,7 +1553,7 @@ Other parameters are passed through a pointer to a apiCreateRepository29Request 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RGroupRepositoryApiRequest**](RGroupRepositoryApiRequest.md) |  | 
+ **body** | [**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1630,6 +1639,130 @@ No authorization required
 
 > CreateRepository30(ctx).Body(body).Execute()
 
+Create Git LFS hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	body := *openapiclient.NewGitLfsHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // GitLfsHostedRepositoryApiRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository30(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository30``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRepository30Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GitLfsHostedRepositoryApiRequest**](GitLfsHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateRepository31
+
+> CreateRepository31(ctx).Body(body).Execute()
+
+Create R group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	body := *openapiclient.NewRGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // RGroupRepositoryApiRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository31(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository31``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRepository31Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RGroupRepositoryApiRequest**](RGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateRepository32
+
+> CreateRepository32(ctx).Body(body).Execute()
+
 Create R hosted repository
 
 ### Example
@@ -1649,9 +1782,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository30(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository32(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository30``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository32``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1663,7 +1796,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRepository30Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRepository32Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1688,9 +1821,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateRepository31
+## CreateRepository33
 
-> CreateRepository31(ctx).Body(body).Execute()
+> CreateRepository33(ctx).Body(body).Execute()
 
 Create R proxy repository
 
@@ -1711,9 +1844,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository31(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository33(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository31``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository33``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1725,7 +1858,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRepository31Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRepository33Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1750,9 +1883,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateRepository32
+## CreateRepository34
 
-> CreateRepository32(ctx).Body(body).Execute()
+> CreateRepository34(ctx).Body(body).Execute()
 
 Create Cocoapods proxy repository
 
@@ -1773,9 +1906,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository32(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository34(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository32``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository34``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1787,7 +1920,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRepository32Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRepository34Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1812,9 +1945,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateRepository33
+## CreateRepository35
 
-> CreateRepository33(ctx).Body(body).Execute()
+> CreateRepository35(ctx).Body(body).Execute()
 
 Create a Go group repository
 
@@ -1835,9 +1968,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository33(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository35(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository33``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository35``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1849,7 +1982,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRepository33Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRepository35Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1874,9 +2007,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateRepository34
+## CreateRepository36
 
-> CreateRepository34(ctx).Body(body).Execute()
+> CreateRepository36(ctx).Body(body).Execute()
 
 Create a Go proxy repository
 
@@ -1897,9 +2030,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository34(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository36(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository34``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository36``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1911,7 +2044,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRepository34Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRepository36Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1936,9 +2069,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateRepository35
+## CreateRepository37
 
-> CreateRepository35(ctx).Body(body).Execute()
+> CreateRepository37(ctx).Body(body).Execute()
 
 Create p2 proxy repository
 
@@ -1959,9 +2092,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository35(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository37(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository35``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository37``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1973,7 +2106,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRepository35Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRepository37Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1998,9 +2131,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateRepository36
+## CreateRepository38
 
-> CreateRepository36(ctx).Body(body).Execute()
+> CreateRepository38(ctx).Body(body).Execute()
 
 Create Helm hosted repository
 
@@ -2021,9 +2154,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository36(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository38(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository36``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository38``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -2035,7 +2168,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRepository36Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRepository38Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2060,9 +2193,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateRepository37
+## CreateRepository39
 
-> CreateRepository37(ctx).Body(body).Execute()
+> CreateRepository39(ctx).Body(body).Execute()
 
 Create Helm proxy repository
 
@@ -2080,130 +2213,6 @@ import (
 
 func main() {
 	body := *openapiclient.NewHelmProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // HelmProxyRepositoryApiRequest |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository37(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository37``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateRepository37Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**HelmProxyRepositoryApiRequest**](HelmProxyRepositoryApiRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CreateRepository38
-
-> CreateRepository38(ctx).Body(body).Execute()
-
-Create Bower group repository
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/sma-de/go-nexus"
-)
-
-func main() {
-	body := *openapiclient.NewBowerGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // BowerGroupRepositoryApiRequest |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRepository38(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository38``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateRepository38Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**BowerGroupRepositoryApiRequest**](BowerGroupRepositoryApiRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CreateRepository39
-
-> CreateRepository39(ctx).Body(body).Execute()
-
-Create Bower hosted repository
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/sma-de/go-nexus"
-)
-
-func main() {
-	body := *openapiclient.NewBowerHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // BowerHostedRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2226,7 +2235,7 @@ Other parameters are passed through a pointer to a apiCreateRepository39Request 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BowerHostedRepositoryApiRequest**](BowerHostedRepositoryApiRequest.md) |  | 
+ **body** | [**HelmProxyRepositoryApiRequest**](HelmProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2312,7 +2321,7 @@ No authorization required
 
 > CreateRepository40(ctx).Body(body).Execute()
 
-Create Bower proxy repository
+Create cargo group repository
 
 ### Example
 
@@ -2327,7 +2336,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewBowerProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // BowerProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewCargoGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // CargoGroupRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2350,7 +2359,193 @@ Other parameters are passed through a pointer to a apiCreateRepository40Request 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BowerProxyRepositoryApiRequest**](BowerProxyRepositoryApiRequest.md) |  | 
+ **body** | [**CargoGroupRepositoryApiRequest**](CargoGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateRepository41
+
+> CreateRepository41(ctx).Body(body).Execute()
+
+Create cargo hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	body := *openapiclient.NewCargoHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // CargoHostedRepositoryApiRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository41(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository41``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRepository41Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CargoHostedRepositoryApiRequest**](CargoHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateRepository42
+
+> CreateRepository42(ctx).Body(body).Execute()
+
+Create cargo proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	body := *openapiclient.NewCargoProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // CargoProxyRepositoryApiRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository42(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository42``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRepository42Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CargoProxyRepositoryApiRequest**](CargoProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateRepository43
+
+> CreateRepository43(ctx).Body(body).Execute()
+
+Create composer proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	body := *openapiclient.NewComposerProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // ComposerProxyRepositoryApiRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateRepository43(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRepository43``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRepository43Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ComposerProxyRepositoryApiRequest**](ComposerProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -4426,7 +4621,7 @@ No authorization required
 
 ## GetRepository28
 
-> SimpleApiProxyRepository GetRepository28(ctx, repositoryName).Execute()
+> SimpleApiGroupRepository GetRepository28(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -4452,7 +4647,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository28``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository28`: SimpleApiProxyRepository
+	// response from `GetRepository28`: SimpleApiGroupRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository28`: %v\n", resp)
 }
 ```
@@ -4476,7 +4671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
 
 ### Authorization
 
@@ -4630,7 +4825,7 @@ No authorization required
 
 ## GetRepository30
 
-> SimpleApiGroupRepository GetRepository30(ctx, repositoryName).Execute()
+> SimpleApiProxyRepository GetRepository30(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -4656,7 +4851,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository30``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository30`: SimpleApiGroupRepository
+	// response from `GetRepository30`: SimpleApiProxyRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository30`: %v\n", resp)
 }
 ```
@@ -4680,7 +4875,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
 
 ### Authorization
 
@@ -4766,7 +4961,7 @@ No authorization required
 
 ## GetRepository32
 
-> SimpleApiProxyRepository GetRepository32(ctx, repositoryName).Execute()
+> SimpleApiGroupRepository GetRepository32(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -4792,7 +4987,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository32``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository32`: SimpleApiProxyRepository
+	// response from `GetRepository32`: SimpleApiGroupRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository32`: %v\n", resp)
 }
 ```
@@ -4816,7 +5011,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
 
 ### Authorization
 
@@ -4834,7 +5029,7 @@ No authorization required
 
 ## GetRepository33
 
-> SimpleApiProxyRepository GetRepository33(ctx, repositoryName).Execute()
+> SimpleApiHostedRepository GetRepository33(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -4860,7 +5055,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository33``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository33`: SimpleApiProxyRepository
+	// response from `GetRepository33`: SimpleApiHostedRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository33`: %v\n", resp)
 }
 ```
@@ -4884,7 +5079,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
 
 ### Authorization
 
@@ -4902,7 +5097,7 @@ No authorization required
 
 ## GetRepository34
 
-> SimpleApiGroupRepository GetRepository34(ctx, repositoryName).Execute()
+> SimpleApiProxyRepository GetRepository34(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -4928,7 +5123,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository34``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository34`: SimpleApiGroupRepository
+	// response from `GetRepository34`: SimpleApiProxyRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository34`: %v\n", resp)
 }
 ```
@@ -4952,7 +5147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
 
 ### Authorization
 
@@ -5038,7 +5233,7 @@ No authorization required
 
 ## GetRepository36
 
-> SimpleApiProxyRepository GetRepository36(ctx, repositoryName).Execute()
+> SimpleApiGroupRepository GetRepository36(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5064,7 +5259,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository36``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository36`: SimpleApiProxyRepository
+	// response from `GetRepository36`: SimpleApiGroupRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository36`: %v\n", resp)
 }
 ```
@@ -5088,7 +5283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
 
 ### Authorization
 
@@ -5106,7 +5301,7 @@ No authorization required
 
 ## GetRepository37
 
-> SimpleApiHostedRepository GetRepository37(ctx, repositoryName).Execute()
+> SimpleApiProxyRepository GetRepository37(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5132,7 +5327,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository37``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository37`: SimpleApiHostedRepository
+	// response from `GetRepository37`: SimpleApiProxyRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository37`: %v\n", resp)
 }
 ```
@@ -5156,7 +5351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
 
 ### Authorization
 
@@ -5242,7 +5437,7 @@ No authorization required
 
 ## GetRepository39
 
-> SimpleApiGroupRepository GetRepository39(ctx, repositoryName).Execute()
+> SimpleApiHostedRepository GetRepository39(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5268,7 +5463,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository39``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository39`: SimpleApiGroupRepository
+	// response from `GetRepository39`: SimpleApiHostedRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository39`: %v\n", resp)
 }
 ```
@@ -5292,7 +5487,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
 
 ### Authorization
 
@@ -5378,7 +5573,7 @@ No authorization required
 
 ## GetRepository40
 
-> SimpleApiHostedRepository GetRepository40(ctx, repositoryName).Execute()
+> SimpleApiProxyRepository GetRepository40(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5404,7 +5599,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository40``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository40`: SimpleApiHostedRepository
+	// response from `GetRepository40`: SimpleApiProxyRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository40`: %v\n", resp)
 }
 ```
@@ -5428,7 +5623,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
 
 ### Authorization
 
@@ -5446,7 +5641,7 @@ No authorization required
 
 ## GetRepository41
 
-> BowerProxyApiRepository GetRepository41(ctx, repositoryName).Execute()
+> CargoGroupApiRepository GetRepository41(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5472,7 +5667,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository41``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository41`: BowerProxyApiRepository
+	// response from `GetRepository41`: CargoGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository41`: %v\n", resp)
 }
 ```
@@ -5496,7 +5691,211 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BowerProxyApiRepository**](BowerProxyApiRepository.md)
+[**CargoGroupApiRepository**](CargoGroupApiRepository.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRepository42
+
+> SimpleApiHostedRepository GetRepository42(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetRepository42(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository42``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRepository42`: SimpleApiHostedRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository42`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRepository42Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRepository43
+
+> CargoProxyApiRepository GetRepository43(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetRepository43(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository43``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRepository43`: CargoProxyApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository43`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRepository43Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**CargoProxyApiRepository**](CargoProxyApiRepository.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRepository44
+
+> SimpleApiProxyRepository GetRepository44(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetRepository44(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository44``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRepository44`: SimpleApiProxyRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository44`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRepository44Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
 
 ### Authorization
 
@@ -7348,7 +7747,7 @@ No authorization required
 
 > UpdateRepository27(ctx, repositoryName).Body(body).Execute()
 
-Update Conan proxy repository
+Update Conan group repository
 
 ### Example
 
@@ -7364,7 +7763,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewConanProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // ConanProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewConanGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupDeployAttributes()) // ConanGroupRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7392,7 +7791,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository27Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md) |  | 
+ **body** | [**ConanGroupRepositoryApiRequest**](ConanGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -7416,7 +7815,7 @@ No authorization required
 
 > UpdateRepository28(ctx, repositoryName).Body(body).Execute()
 
-Update Git LFS hosted repository
+Update Conan hosted repository
 
 ### Example
 
@@ -7432,7 +7831,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewGitLfsHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // GitLfsHostedRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewConanHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // ConanHostedRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7460,7 +7859,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository28Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**GitLfsHostedRepositoryApiRequest**](GitLfsHostedRepositoryApiRequest.md) |  | 
+ **body** | [**ConanHostedRepositoryApiRequest**](ConanHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -7484,7 +7883,7 @@ No authorization required
 
 > UpdateRepository29(ctx, repositoryName).Body(body).Execute()
 
-Update R group repository
+Update Conan proxy repository
 
 ### Example
 
@@ -7500,7 +7899,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewRGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // RGroupRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewConanProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // ConanProxyRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7528,7 +7927,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository29Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RGroupRepositoryApiRequest**](RGroupRepositoryApiRequest.md) |  | 
+ **body** | [**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -7620,7 +8019,7 @@ No authorization required
 
 > UpdateRepository30(ctx, repositoryName).Body(body).Execute()
 
-Update R hosted repository
+Update Git LFS hosted repository
 
 ### Example
 
@@ -7636,7 +8035,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewRHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // RHostedRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewGitLfsHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // GitLfsHostedRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7664,7 +8063,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository30Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RHostedRepositoryApiRequest**](RHostedRepositoryApiRequest.md) |  | 
+ **body** | [**GitLfsHostedRepositoryApiRequest**](GitLfsHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -7688,7 +8087,7 @@ No authorization required
 
 > UpdateRepository31(ctx, repositoryName).Body(body).Execute()
 
-Update R proxy repository
+Update R group repository
 
 ### Example
 
@@ -7704,7 +8103,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewRProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // RProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewRGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // RGroupRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7732,7 +8131,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository31Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RProxyRepositoryApiRequest**](RProxyRepositoryApiRequest.md) |  | 
+ **body** | [**RGroupRepositoryApiRequest**](RGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -7756,7 +8155,7 @@ No authorization required
 
 > UpdateRepository32(ctx, repositoryName).Body(body).Execute()
 
-Update Cocoapods proxy repository
+Update R hosted repository
 
 ### Example
 
@@ -7772,7 +8171,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewCocoapodsProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // CocoapodsProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewRHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // RHostedRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7800,7 +8199,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository32Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**CocoapodsProxyRepositoryApiRequest**](CocoapodsProxyRepositoryApiRequest.md) |  | 
+ **body** | [**RHostedRepositoryApiRequest**](RHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -7824,7 +8223,7 @@ No authorization required
 
 > UpdateRepository33(ctx, repositoryName).Body(body).Execute()
 
-Update a Go group repository
+Update R proxy repository
 
 ### Example
 
@@ -7840,7 +8239,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewGolangGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // GolangGroupRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewRProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // RProxyRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7868,7 +8267,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository33Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**GolangGroupRepositoryApiRequest**](GolangGroupRepositoryApiRequest.md) |  | 
+ **body** | [**RProxyRepositoryApiRequest**](RProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -7892,7 +8291,7 @@ No authorization required
 
 > UpdateRepository34(ctx, repositoryName).Body(body).Execute()
 
-Update a Go proxy repository
+Update Cocoapods proxy repository
 
 ### Example
 
@@ -7908,7 +8307,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewGolangProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // GolangProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewCocoapodsProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // CocoapodsProxyRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7936,7 +8335,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository34Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**GolangProxyRepositoryApiRequest**](GolangProxyRepositoryApiRequest.md) |  | 
+ **body** | [**CocoapodsProxyRepositoryApiRequest**](CocoapodsProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -7960,7 +8359,7 @@ No authorization required
 
 > UpdateRepository35(ctx, repositoryName).Body(body).Execute()
 
-Update p2 proxy repository
+Update a Go group repository
 
 ### Example
 
@@ -7976,7 +8375,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewP2ProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // P2ProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewGolangGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // GolangGroupRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8004,7 +8403,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository35Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**P2ProxyRepositoryApiRequest**](P2ProxyRepositoryApiRequest.md) |  | 
+ **body** | [**GolangGroupRepositoryApiRequest**](GolangGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -8028,7 +8427,7 @@ No authorization required
 
 > UpdateRepository36(ctx, repositoryName).Body(body).Execute()
 
-Update Helm hosted repository
+Update a Go proxy repository
 
 ### Example
 
@@ -8044,7 +8443,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewHelmHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // HelmHostedRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewGolangProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // GolangProxyRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8072,7 +8471,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository36Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**HelmHostedRepositoryApiRequest**](HelmHostedRepositoryApiRequest.md) |  | 
+ **body** | [**GolangProxyRepositoryApiRequest**](GolangProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -8096,7 +8495,7 @@ No authorization required
 
 > UpdateRepository37(ctx, repositoryName).Body(body).Execute()
 
-Update Helm proxy repository
+Update p2 proxy repository
 
 ### Example
 
@@ -8112,7 +8511,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewHelmProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // HelmProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewP2ProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // P2ProxyRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8140,7 +8539,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository37Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**HelmProxyRepositoryApiRequest**](HelmProxyRepositoryApiRequest.md) |  | 
+ **body** | [**P2ProxyRepositoryApiRequest**](P2ProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -8164,7 +8563,7 @@ No authorization required
 
 > UpdateRepository38(ctx, repositoryName).Body(body).Execute()
 
-Update Bower group repository
+Update Helm hosted repository
 
 ### Example
 
@@ -8180,7 +8579,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewBowerGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // BowerGroupRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewHelmHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // HelmHostedRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8208,7 +8607,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository38Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**BowerGroupRepositoryApiRequest**](BowerGroupRepositoryApiRequest.md) |  | 
+ **body** | [**HelmHostedRepositoryApiRequest**](HelmHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -8232,7 +8631,7 @@ No authorization required
 
 > UpdateRepository39(ctx, repositoryName).Body(body).Execute()
 
-Update Bower hosted repository
+Update Helm proxy repository
 
 ### Example
 
@@ -8248,7 +8647,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewBowerHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // BowerHostedRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewHelmProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // HelmProxyRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8276,7 +8675,7 @@ Other parameters are passed through a pointer to a apiUpdateRepository39Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**BowerHostedRepositoryApiRequest**](BowerHostedRepositoryApiRequest.md) |  | 
+ **body** | [**HelmProxyRepositoryApiRequest**](HelmProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -8368,7 +8767,7 @@ No authorization required
 
 > UpdateRepository40(ctx, repositoryName).Body(body).Execute()
 
-Update Bower proxy repository
+Update cargo group repository
 
 ### Example
 
@@ -8384,7 +8783,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *openapiclient.NewBowerProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // BowerProxyRepositoryApiRequest |  (optional)
+	body := *openapiclient.NewCargoGroupRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewGroupAttributes()) // CargoGroupRepositoryApiRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8412,7 +8811,211 @@ Other parameters are passed through a pointer to a apiUpdateRepository40Request 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**BowerProxyRepositoryApiRequest**](BowerProxyRepositoryApiRequest.md) |  | 
+ **body** | [**CargoGroupRepositoryApiRequest**](CargoGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateRepository41
+
+> UpdateRepository41(ctx, repositoryName).Body(body).Execute()
+
+Update cargo hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *openapiclient.NewCargoHostedRepositoryApiRequest("internal", true, *openapiclient.NewHostedStorageAttributes("default", true, "allow_once")) // CargoHostedRepositoryApiRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateRepository41(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRepository41``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateRepository41Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**CargoHostedRepositoryApiRequest**](CargoHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateRepository42
+
+> UpdateRepository42(ctx, repositoryName).Body(body).Execute()
+
+Update cargo proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *openapiclient.NewCargoProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // CargoProxyRepositoryApiRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateRepository42(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRepository42``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateRepository42Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**CargoProxyRepositoryApiRequest**](CargoProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateRepository43
+
+> UpdateRepository43(ctx, repositoryName).Body(body).Execute()
+
+Update composer proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/sma-de/go-nexus"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *openapiclient.NewComposerProxyRepositoryApiRequest("internal", true, *openapiclient.NewStorageAttributes("default", true), *openapiclient.NewProxyAttributes(int32(1440), int32(1440)), *openapiclient.NewNegativeCacheAttributes(true, int32(1440)), *openapiclient.NewHttpClientAttributes(false, true)) // ComposerProxyRepositoryApiRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateRepository43(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRepository43``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateRepository43Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**ComposerProxyRepositoryApiRequest**](ComposerProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 

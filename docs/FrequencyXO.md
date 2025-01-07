@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schedule** | **string** | Type of schedule (\&quot;manual\&quot;, \&quot;once\&quot;, \&quot;hourly\&quot;, \&quot;daily\&quot;, \&quot;weekly\&quot;, \&quot;monthly\&quot;, \&quot;cron\&quot;) | 
 **StartDate** | Pointer to **int64** | Start date of the task represented in unix timestamp. Does not apply for \&quot;manual\&quot; schedule. | [optional] 
-**TimeZoneOffset** | Pointer to **string** | The offset time zone of the client. Example: \&quot;-05:00\&quot; | [optional] 
+**TimeZoneOffset** | Pointer to **string** | The offset time zone of the client. Example:  | [optional] 
 **RecurringDays** | Pointer to **[]int32** | Array with the number of the days the task must run. For \&quot;weekly\&quot; schedule allowed values, 1 to 7. For \&quot;monthly\&quot; schedule allowed values, 1 to 31. | [optional] 
-**CronExpression** | Pointer to **string** | Cron expression for the task. Only applies for for \&quot;cron\&quot; schedule. Example: \&quot;0 1 2 * * ?\&quot; | [optional] 
+**CronExpression** | Pointer to **string** | Cron expression for the task. Only applies for for \&quot;cron\&quot; schedule. | [optional] 
 
 ## Methods
 
