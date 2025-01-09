@@ -1,10 +1,11 @@
 openapi: 3.0.1
 info:
   title: Nexus Repository Manager REST API
-  version: 3.75.1-01
+  version: 3.76.0-03
 servers:
 - url: /service/rest/
 tags:
+- name: Blob store
 - name: "Security Management: Anonymous Access"
 - name: Security management
 - name: "Security management: users"
@@ -12,7 +13,6 @@ tags:
 - name: "Security management: realms"
 - name: "Security management: roles"
 - name: Tasks
-- name: Blob store
 - name: Lifecycle
 - name: "System: Nodes"
 - name: Read-only
@@ -33,6 +33,7 @@ tags:
 - name: Tags
 - name: Manage Sonatype Repository Firewall configuration
 - name: Malicious Risk On Disk
+- name: Malicious Risk Visualizer
 - name: "Security management: user tokens"
 - name: Product licensing
 - name: "Security: Atlassian Crowd"
@@ -42,6 +43,57 @@ tags:
 - name: Cleanup policies
 - name: Manage Sonatype HTTP System Settings
 paths:
+  /v1/blobstores/{name}:
+    delete:
+      operationId: deleteBlobStore
+      parameters:
+      - description: The name of the blob store to delete
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content: {}
+          description: successful operation
+      summary: Delete a blob store by name
+      tags:
+      - Blob store
+  /v1/blobstores/{name}/quota-status:
+    get:
+      operationId: quotaStatus
+      parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlobStoreQuotaResultXO'
+          description: successful operation
+      summary: Get quota status for a given blob store
+      tags:
+      - Blob store
+  /v1/blobstores:
+    get:
+      operationId: listBlobStores
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GenericBlobStoreApiResponse'
+                type: array
+          description: successful operation
+      summary: List the blob stores
+      tags:
+      - Blob store
   /v1/security/anonymous:
     get:
       operationId: read
@@ -294,48 +346,9 @@ paths:
       summary: Retrieve a privilege by name.
       tags:
       - "Security management: privileges"
-  /v1/security/privileges:
-    get:
-      operationId: getPrivileges
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ApiPrivilege'
-                type: array
-          description: successful operation
-        "403":
-          content: {}
-          description: The user does not have permission to perform the operation.
-      summary: Retrieve a list of privileges.
-      tags:
-      - "Security management: privileges"
-  /v1/security/privileges/wildcard:
-    post:
-      operationId: createPrivilege
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ApiPrivilegeWildcardRequest'
-        description: The privilege to create.
-        required: false
-      responses:
-        "400":
-          content: {}
-          description: Privilege object not configured properly.
-        "403":
-          content: {}
-          description: The user does not have permission to perform the operation.
-      summary: Create a wildcard type privilege.
-      tags:
-      - "Security management: privileges"
-      x-codegen-request-body-name: body
   /v1/security/privileges/application:
     post:
-      operationId: createPrivilege_1
+      operationId: createPrivilege
       requestBody:
         content:
           application/json:
@@ -354,22 +367,15 @@ paths:
       tags:
       - "Security management: privileges"
       x-codegen-request-body-name: body
-  /v1/security/privileges/wildcard/{privilegeName}:
-    put:
-      operationId: updatePrivilege
-      parameters:
-      - description: The name of the privilege to update.
-        in: path
-        name: privilegeName
-        required: true
-        schema:
-          type: string
+  /v1/security/privileges/wildcard:
+    post:
+      operationId: createPrivilege_1
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/ApiPrivilegeWildcardRequest'
-        description: The privilege to update.
+        description: The privilege to create.
         required: false
       responses:
         "400":
@@ -378,16 +384,13 @@ paths:
         "403":
           content: {}
           description: The user does not have permission to perform the operation.
-        "404":
-          content: {}
-          description: Privilege not found in the system.
-      summary: Update a wildcard type privilege.
+      summary: Create a wildcard type privilege.
       tags:
       - "Security management: privileges"
       x-codegen-request-body-name: body
   /v1/security/privileges/application/{privilegeName}:
     put:
-      operationId: updatePrivilege_1
+      operationId: updatePrivilege
       parameters:
       - description: The name of the privilege to update.
         in: path
@@ -416,6 +419,55 @@ paths:
       tags:
       - "Security management: privileges"
       x-codegen-request-body-name: body
+  /v1/security/privileges/wildcard/{privilegeName}:
+    put:
+      operationId: updatePrivilege_1
+      parameters:
+      - description: The name of the privilege to update.
+        in: path
+        name: privilegeName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiPrivilegeWildcardRequest'
+        description: The privilege to update.
+        required: false
+      responses:
+        "400":
+          content: {}
+          description: Privilege object not configured properly.
+        "403":
+          content: {}
+          description: The user does not have permission to perform the operation.
+        "404":
+          content: {}
+          description: Privilege not found in the system.
+      summary: Update a wildcard type privilege.
+      tags:
+      - "Security management: privileges"
+      x-codegen-request-body-name: body
+  /v1/security/privileges:
+    get:
+      operationId: getPrivileges
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ApiPrivilege'
+                type: array
+          description: successful operation
+        "403":
+          content: {}
+          description: The user does not have permission to perform the operation.
+      summary: Retrieve a list of privileges.
+      tags:
+      - "Security management: privileges"
   /v1/security/realms/available:
     get:
       operationId: getRealms
@@ -717,57 +769,6 @@ paths:
       summary: Stop task
       tags:
       - Tasks
-  /v1/blobstores/{name}:
-    delete:
-      operationId: deleteBlobStore
-      parameters:
-      - description: The name of the blob store to delete
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-      responses:
-        default:
-          content: {}
-          description: successful operation
-      summary: Delete a blob store by name
-      tags:
-      - Blob store
-  /v1/blobstores/{name}/quota-status:
-    get:
-      operationId: quotaStatus
-      parameters:
-      - in: path
-        name: name
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BlobStoreQuotaResultXO'
-          description: successful operation
-      summary: Get quota status for a given blob store
-      tags:
-      - Blob store
-  /v1/blobstores:
-    get:
-      operationId: listBlobStores
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/GenericBlobStoreApiResponse'
-                type: array
-          description: successful operation
-      summary: List the blob stores
-      tags:
-      - Blob store
   /v1/blobstores/file:
     post:
       operationId: createFileBlobStore
@@ -1029,6 +1030,45 @@ paths:
       tags:
       - "Security management: secrets encryption"
       x-codegen-request-body-name: body
+  /v1/security/ssl:
+    get:
+      operationId: retrieveCertificate
+      parameters:
+      - description: The remote system's host name
+        in: query
+        name: host
+        required: true
+        schema:
+          type: string
+      - description: The port on the remote system to connect to
+        in: query
+        name: port
+        schema:
+          default: 443
+          format: int32
+          type: integer
+      - description: An optional hint of the protocol to try for the connection
+        in: query
+        name: protocolHint
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiCertificate'
+          description: successful operation
+        "403":
+          content: {}
+          description: Insufficient permissions to retrieve remote certificate.
+        "400":
+          content: {}
+          description: "A certificate could not be retrieved, see the message for\
+            \ details."
+      summary: Helper method to retrieve certificate details from a remote system.
+      tags:
+      - "Security: certificates"
   /v1/security/ssl/truststore:
     get:
       operationId: getTrustStoreCertificates
@@ -1092,45 +1132,29 @@ paths:
       summary: Remove a certificate in the trust store.
       tags:
       - "Security: certificates"
-  /v1/security/ssl:
-    get:
-      operationId: retrieveCertificate
-      parameters:
-      - description: The remote system's host name
-        in: query
-        name: host
-        required: true
-        schema:
-          type: string
-      - description: The port on the remote system to connect to
-        in: query
-        name: port
-        schema:
-          default: 443
-          format: int32
-          type: integer
-      - description: An optional hint of the protocol to try for the connection
-        in: query
-        name: protocolHint
-        schema:
-          type: string
+  /v1/blobstores/s3:
+    post:
+      operationId: createBlobStore
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/S3BlobStoreApiModel'
+        required: false
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiCertificate'
-          description: successful operation
+        "201":
+          content: {}
+          description: S3 blob store created
+        "401":
+          content: {}
+          description: Authentication required
         "403":
           content: {}
-          description: Insufficient permissions to retrieve remote certificate.
-        "400":
-          content: {}
-          description: "A certificate could not be retrieved, see the message for\
-            \ details."
-      summary: Helper method to retrieve certificate details from a remote system.
+          description: Insufficient permissions
+      summary: Create an S3 blob store
       tags:
-      - "Security: certificates"
+      - Blob store
+      x-codegen-request-body-name: body
   /v1/blobstores/s3/{name}:
     get:
       operationId: getBlobStore
@@ -1189,29 +1213,6 @@ paths:
           content: {}
           description: Insufficient permissions
       summary: Update an S3 blob store configuration by name
-      tags:
-      - Blob store
-      x-codegen-request-body-name: body
-  /v1/blobstores/s3:
-    post:
-      operationId: createBlobStore
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/S3BlobStoreApiModel'
-        required: false
-      responses:
-        "201":
-          content: {}
-          description: S3 blob store created
-        "401":
-          content: {}
-          description: Authentication required
-        "403":
-          content: {}
-          description: Insufficient permissions
-      summary: Create an S3 blob store
       tags:
       - Blob store
       x-codegen-request-body-name: body
@@ -1302,6 +1303,19 @@ paths:
         checks
       tags:
       - Status
+  /v1/status:
+    get:
+      operationId: isAvailable
+      responses:
+        "200":
+          content: {}
+          description: Available to service requests
+        "503":
+          content: {}
+          description: Unavailable to service requests
+      summary: Health check endpoint that validates server can respond to read requests
+      tags:
+      - Status
   /v1/status/writable:
     get:
       operationId: isWritable
@@ -1314,19 +1328,6 @@ paths:
           description: Unavailable to service requests
       summary: Health check endpoint that validates server can respond to read and
         write requests
-      tags:
-      - Status
-  /v1/status:
-    get:
-      operationId: isAvailable
-      responses:
-        "200":
-          content: {}
-          description: Available to service requests
-        "503":
-          content: {}
-          description: Unavailable to service requests
-      summary: Health check endpoint that validates server can respond to read requests
       tags:
       - Status
   /v1/support/supportzippath:
@@ -3878,44 +3879,6 @@ paths:
       tags:
       - Repository Management
       x-codegen-request-body-name: body
-  /v1/security/ldap:
-    get:
-      operationId: getLdapServers
-      responses:
-        "200":
-          content: {}
-          description: LDAP server list returned
-        "401":
-          content: {}
-          description: Authentication required
-        "403":
-          content: {}
-          description: Insufficient permissions
-      summary: List LDAP servers
-      tags:
-      - "Security management: LDAP"
-    post:
-      operationId: createLdapServer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateLdapServerXo'
-        required: false
-      responses:
-        "201":
-          content: {}
-          description: LDAP server created
-        "401":
-          content: {}
-          description: Authentication required
-        "403":
-          content: {}
-          description: Insufficient permissions
-      summary: Create LDAP server
-      tags:
-      - "Security management: LDAP"
-      x-codegen-request-body-name: body
   /v1/security/ldap/{name}:
     delete:
       operationId: deleteLdapServer
@@ -3997,6 +3960,44 @@ paths:
           content: {}
           description: LDAP server not found
       summary: Update LDAP server
+      tags:
+      - "Security management: LDAP"
+      x-codegen-request-body-name: body
+  /v1/security/ldap:
+    get:
+      operationId: getLdapServers
+      responses:
+        "200":
+          content: {}
+          description: LDAP server list returned
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: List LDAP servers
+      tags:
+      - "Security management: LDAP"
+    post:
+      operationId: createLdapServer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLdapServerXo'
+        required: false
+      responses:
+        "201":
+          content: {}
+          description: LDAP server created
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create LDAP server
       tags:
       - "Security management: LDAP"
       x-codegen-request-body-name: body
@@ -4867,6 +4868,22 @@ paths:
       summary: Get Malicious Risk On Disk Count
       tags:
       - Malicious Risk On Disk
+  /v1/malicious-risk/summary:
+    get:
+      operationId: getMaliciousRiskSummary
+      responses:
+        "200":
+          content: {}
+          description: Malicious Risk Summary returned
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Get Dashboard Data Summary
+      tags:
+      - Malicious Risk Visualizer
   /v1/security/user-tokens:
     delete:
       operationId: resetAllUserTokens
@@ -7945,6 +7962,29 @@ paths:
       tags:
       - Azure blob store
       x-codegen-request-body-name: body
+  /v1/blobstores/azure:
+    post:
+      operationId: createBlobStore_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AzureBlobStoreApiModel'
+        required: false
+      responses:
+        "201":
+          content: {}
+          description: Azure blob store created
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create an Azure blob store
+      tags:
+      - Blob store
+      x-codegen-request-body-name: body
   /v1/blobstores/azure/{name}:
     get:
       operationId: getBlobStore_1
@@ -8003,29 +8043,6 @@ paths:
           content: {}
           description: Insufficient permissions
       summary: Update an Azure blob store configuration by name
-      tags:
-      - Blob store
-      x-codegen-request-body-name: body
-  /v1/blobstores/azure:
-    post:
-      operationId: createBlobStore_1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AzureBlobStoreApiModel'
-        required: false
-      responses:
-        "201":
-          content: {}
-          description: Azure blob store created
-        "401":
-          content: {}
-          description: Authentication required
-        "403":
-          content: {}
-          description: Insufficient permissions
-      summary: Create an Azure blob store
       tags:
       - Blob store
       x-codegen-request-body-name: body
@@ -8464,6 +8481,35 @@ paths:
       summary: Get a policy by name
       tags:
       - Cleanup policies
+  /v1/cleanup-policies/{policyName}:
+    put:
+      operationId: update_2
+      parameters:
+      - in: path
+        name: policyName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CleanupPolicyResourceXO'
+        required: false
+      responses:
+        "400":
+          content: {}
+          description: Given payload has invalid data
+        "404":
+          content: {}
+          description: Given policy name does not exist
+        "204":
+          content: {}
+          description: Policy was successfully updated
+      summary: Update existing policy
+      tags:
+      - Cleanup policies
+      x-codegen-request-body-name: body
   /v1/cleanup-policies:
     get:
       operationId: getAll
@@ -8493,35 +8539,6 @@ paths:
           content: {}
           description: Policy was successfully created
       summary: Create a new policy
-      tags:
-      - Cleanup policies
-      x-codegen-request-body-name: body
-  /v1/cleanup-policies/{policyName}:
-    put:
-      operationId: update_2
-      parameters:
-      - in: path
-        name: policyName
-        required: true
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CleanupPolicyResourceXO'
-        required: false
-      responses:
-        "400":
-          content: {}
-          description: Given payload has invalid data
-        "404":
-          content: {}
-          description: Given policy name does not exist
-        "204":
-          content: {}
-          description: Policy was successfully updated
-      summary: Update existing policy
       tags:
       - Cleanup policies
       x-codegen-request-body-name: body
@@ -8676,6 +8693,29 @@ paths:
       tags:
       - Tasks
       x-codegen-request-body-name: body
+  /v1/blobstores/google:
+    post:
+      operationId: createBlobStore_2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GoogleCloudBlobstoreApiModel'
+        required: false
+      responses:
+        "201":
+          content: {}
+          description: Google Cloud blob store created
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create a Google Cloud blob store
+      tags:
+      - Blob store
+      x-codegen-request-body-name: body
   /v1/blobstores/google/{name}:
     get:
       operationId: getBlobStore_2
@@ -8734,29 +8774,6 @@ paths:
           content: {}
           description: Repository not found
       summary: Update a Google Cloud blob store
-      tags:
-      - Blob store
-      x-codegen-request-body-name: body
-  /v1/blobstores/google:
-    post:
-      operationId: createBlobStore_2
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/GoogleCloudBlobstoreApiModel'
-        required: false
-      responses:
-        "201":
-          content: {}
-          description: Google Cloud blob store created
-        "401":
-          content: {}
-          description: Authentication required
-        "403":
-          content: {}
-          description: Insufficient permissions
-      summary: Create a Google Cloud blob store
       tags:
       - Blob store
       x-codegen-request-body-name: body
@@ -9089,6 +9106,66 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
+    BlobStoreQuotaResultXO:
+      example:
+        blobStoreName: blobStoreName
+        isViolation: true
+        message: message
+      properties:
+        isViolation:
+          type: boolean
+        message:
+          type: string
+        blobStoreName:
+          type: string
+      type: object
+    BlobStoreApiSoftQuota:
+      example:
+        limit: 0
+        type: spaceRemainingQuota
+      properties:
+        type:
+          description: "The type to use such as spaceRemainingQuota, or spaceUsedQuota"
+          enum:
+          - spaceRemainingQuota
+          - spaceUsedQuota
+          type: string
+        limit:
+          description: The limit in MB.
+          format: int64
+          minimum: 0
+          type: integer
+      type: object
+    GenericBlobStoreApiResponse:
+      example:
+        totalSizeInBytes: 1
+        softQuota:
+          limit: 0
+          type: spaceRemainingQuota
+        unavailable: true
+        blobCount: 6
+        name: name
+        availableSpaceInBytes: 5
+        type: type
+      properties:
+        softQuota:
+          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+        name:
+          type: string
+        type:
+          type: string
+        unavailable:
+          type: boolean
+        blobCount:
+          format: int64
+          type: integer
+        totalSizeInBytes:
+          format: int64
+          type: integer
+        availableSpaceInBytes:
+          format: int64
+          type: integer
+      type: object
     AnonymousAccessSettingsXO:
       example:
         realmName: realmName
@@ -9246,22 +9323,6 @@ components:
             supplied to this will be ignored by the system.
           type: boolean
       type: object
-    ApiPrivilegeWildcardRequest:
-      example:
-        name: name
-        pattern: pattern
-        description: description
-      properties:
-        name:
-          description: The name of the privilege.  This value cannot be changed.
-          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
-          type: string
-        description:
-          type: string
-        pattern:
-          description: A colon separated list of parts that create a permission string.
-          type: string
-      type: object
     ApiPrivilegeApplicationRequest:
       example:
         domain: domain
@@ -9301,6 +9362,22 @@ components:
             \ for all) that this privilege is granting access to.  Note that creating\
             \ new privileges with a domain is only necessary when using plugins that\
             \ define their own domain(s)."
+          type: string
+      type: object
+    ApiPrivilegeWildcardRequest:
+      example:
+        name: name
+        pattern: pattern
+        description: description
+      properties:
+        name:
+          description: The name of the privilege.  This value cannot be changed.
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        description:
+          type: string
+        pattern:
+          description: A colon separated list of parts that create a permission string.
           type: string
       type: object
     RealmApiXO:
@@ -9457,66 +9534,6 @@ components:
         lastRun:
           format: date-time
           type: string
-      type: object
-    BlobStoreQuotaResultXO:
-      example:
-        blobStoreName: blobStoreName
-        isViolation: true
-        message: message
-      properties:
-        isViolation:
-          type: boolean
-        message:
-          type: string
-        blobStoreName:
-          type: string
-      type: object
-    BlobStoreApiSoftQuota:
-      example:
-        limit: 0
-        type: spaceRemainingQuota
-      properties:
-        type:
-          description: "The type to use such as spaceRemainingQuota, or spaceUsedQuota"
-          enum:
-          - spaceRemainingQuota
-          - spaceUsedQuota
-          type: string
-        limit:
-          description: The limit in MB.
-          format: int64
-          minimum: 0
-          type: integer
-      type: object
-    GenericBlobStoreApiResponse:
-      example:
-        totalSizeInBytes: 1
-        softQuota:
-          limit: 0
-          type: spaceRemainingQuota
-        unavailable: true
-        blobCount: 6
-        name: name
-        availableSpaceInBytes: 5
-        type: type
-      properties:
-        softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
-        name:
-          type: string
-        type:
-          type: string
-        unavailable:
-          type: boolean
-        blobCount:
-          format: int64
-          type: integer
-        totalSizeInBytes:
-          format: int64
-          type: integer
-        availableSpaceInBytes:
-          format: int64
-          type: integer
       type: object
     FileBlobStoreApiCreateRequest:
       example:
@@ -10010,6 +10027,7 @@ components:
         security: true
         hostname: hostname
         jmx: true
+        archivedLog: 0
         systemInformation: true
         metrics: true
       properties:
@@ -10037,6 +10055,9 @@ components:
           type: boolean
         limitZipSize:
           type: boolean
+        archivedLog:
+          format: int32
+          type: integer
         hostname:
           type: string
       type: object
@@ -10051,7 +10072,7 @@ components:
         fileSize: 0
         uploader: uploader
         checksum:
-          key: "{}"
+          key: checksum
         id: id
         lastModified: 2000-01-23T04:56:07.000+00:00
         lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10070,8 +10091,7 @@ components:
           type: string
         checksum:
           additionalProperties:
-            properties: {}
-            type: object
+            type: string
           type: object
         contentType:
           type: string
@@ -10106,7 +10126,7 @@ components:
           fileSize: 0
           uploader: uploader
           checksum:
-            key: "{}"
+            key: checksum
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10121,7 +10141,7 @@ components:
           fileSize: 0
           uploader: uploader
           checksum:
-            key: "{}"
+            key: checksum
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10148,7 +10168,7 @@ components:
           fileSize: 0
           uploader: uploader
           checksum:
-            key: "{}"
+            key: checksum
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10163,7 +10183,7 @@ components:
           fileSize: 0
           uploader: uploader
           checksum:
-            key: "{}"
+            key: checksum
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10206,7 +10226,7 @@ components:
             fileSize: 0
             uploader: uploader
             checksum:
-              key: "{}"
+              key: checksum
             id: id
             lastModified: 2000-01-23T04:56:07.000+00:00
             lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10221,7 +10241,7 @@ components:
             fileSize: 0
             uploader: uploader
             checksum:
-              key: "{}"
+              key: checksum
             id: id
             lastModified: 2000-01-23T04:56:07.000+00:00
             lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10243,7 +10263,7 @@ components:
             fileSize: 0
             uploader: uploader
             checksum:
-              key: "{}"
+              key: checksum
             id: id
             lastModified: 2000-01-23T04:56:07.000+00:00
             lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10258,7 +10278,7 @@ components:
             fileSize: 0
             uploader: uploader
             checksum:
-              key: "{}"
+              key: checksum
             id: id
             lastModified: 2000-01-23T04:56:07.000+00:00
             lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -10884,6 +10904,7 @@ components:
           timeout: 60
         authentication:
           password: password
+          bearerToken: bearerToken
           ntlmDomain: ntlmDomain
           type: username
           ntlmHost: ntlmHost
@@ -10951,6 +10972,7 @@ components:
     HttpClientConnectionAuthenticationAttributes:
       example:
         password: password
+        bearerToken: bearerToken
         ntlmDomain: ntlmDomain
         type: username
         ntlmHost: ntlmHost
@@ -10961,6 +10983,7 @@ components:
           enum:
           - username
           - ntlm
+          - bearerToken
           type: string
         username:
           type: string
@@ -10969,6 +10992,8 @@ components:
         ntlmHost:
           type: string
         ntlmDomain:
+          type: string
+        bearerToken:
           type: string
       type: object
     MavenProxyApiRepository:
@@ -10992,6 +11017,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -11122,6 +11148,7 @@ components:
           timeout: 60
         authentication:
           password: password
+          bearerToken: bearerToken
           ntlmDomain: ntlmDomain
           type: username
           ntlmHost: ntlmHost
@@ -11148,6 +11175,7 @@ components:
     HttpClientConnectionAuthenticationAttributesWithPreemptive:
       example:
         password: password
+        bearerToken: bearerToken
         ntlmDomain: ntlmDomain
         type: username
         ntlmHost: ntlmHost
@@ -11159,6 +11187,7 @@ components:
           enum:
           - username
           - ntlm
+          - bearerToken
           type: string
         username:
           type: string
@@ -11167,6 +11196,8 @@ components:
         ntlmHost:
           type: string
         ntlmDomain:
+          type: string
+        bearerToken:
           type: string
         preemptive:
           description: Whether to use pre-emptive authentication. Use with caution.
@@ -11195,6 +11226,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -11448,6 +11480,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -11540,6 +11573,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -11736,6 +11770,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -11810,6 +11845,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -12558,6 +12594,32 @@ components:
         hdsExceptionThrown:
           type: boolean
       type: object
+    MaliciousRiskCountByEcosystem:
+      properties:
+        ecosystem:
+          type: string
+        count:
+          format: int64
+          type: integer
+      type: object
+    MaliciousRiskSummaryResponse:
+      properties:
+        countByEcosystem:
+          items:
+            $ref: '#/components/schemas/MaliciousRiskCountByEcosystem'
+          type: array
+        totalMaliciousRiskCount:
+          format: int64
+          type: integer
+        totalProxyRepositoryCount:
+          format: int64
+          type: integer
+        quarantineEnabledRepositoryCount:
+          format: int64
+          type: integer
+        hdsError:
+          type: boolean
+      type: object
     UserTokensApiModel:
       example:
         expirationDays: 30
@@ -12797,6 +12859,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -12871,6 +12934,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13030,6 +13094,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13106,6 +13171,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13248,6 +13314,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13471,6 +13538,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13785,6 +13853,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13905,6 +13974,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14071,6 +14141,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14145,6 +14216,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14294,6 +14366,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14469,6 +14542,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14539,6 +14613,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14640,6 +14715,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14710,6 +14786,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14839,29 +14916,6 @@ components:
       - bucketConfiguration
       - name
       type: object
-    GroupBlobStoreApiUpdateRequest:
-      example:
-        fillPolicy: roundRobin
-        softQuota:
-          limit: 0
-          type: spaceRemainingQuota
-        members:
-        - members
-        - members
-      properties:
-        softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
-        members:
-          description: List of the names of blob stores that are members of this group
-          items:
-            type: string
-          type: array
-        fillPolicy:
-          enum:
-          - roundRobin
-          - writeToFirst
-          type: string
-      type: object
     GroupBlobStoreApiModel:
       example:
         fillPolicy: roundRobin
@@ -14926,6 +14980,29 @@ components:
           - writeToFirst
           type: string
         name:
+          type: string
+      type: object
+    GroupBlobStoreApiUpdateRequest:
+      example:
+        fillPolicy: roundRobin
+        softQuota:
+          limit: 0
+          type: spaceRemainingQuota
+        members:
+        - members
+        - members
+      properties:
+        softQuota:
+          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+        members:
+          description: List of the names of blob stores that are members of this group
+          items:
+            type: string
+          type: array
+        fillPolicy:
+          enum:
+          - roundRobin
+          - writeToFirst
           type: string
       type: object
     SystemCheckResultDTO:
@@ -15060,6 +15137,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -15406,7 +15484,7 @@ components:
           type: string
         region:
           description: The GCP region to create a new GC Storage bucket in or an existing
-            GC Storage bucket's region
+            GC Storage bucket's region. Should be the same as Nexus deployment region.
           example: us-central1
           type: string
         prefix:
@@ -15415,7 +15493,6 @@ components:
           type: string
       required:
       - name
-      - region
       type: object
     GoogleCloudBlobStoreApiBucketAuthentication:
       example:
@@ -15645,6 +15722,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -15719,6 +15797,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -15793,6 +15872,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost

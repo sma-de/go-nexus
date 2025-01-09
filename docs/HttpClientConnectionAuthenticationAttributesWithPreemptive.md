@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Password** | Pointer to **string** |  | [optional] 
 **NtlmHost** | Pointer to **string** |  | [optional] 
 **NtlmDomain** | Pointer to **string** |  | [optional] 
+**BearerToken** | Pointer to **string** |  | [optional] 
 **Preemptive** | Pointer to **bool** | Whether to use pre-emptive authentication. Use with caution. Defaults to false. | [optional] 
 
 ## Methods
@@ -154,6 +155,31 @@ SetNtlmDomain sets NtlmDomain field to given value.
 `func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) HasNtlmDomain() bool`
 
 HasNtlmDomain returns a boolean if a field has been set.
+
+### GetBearerToken
+
+`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) GetBearerToken() string`
+
+GetBearerToken returns the BearerToken field if non-nil, zero value otherwise.
+
+### GetBearerTokenOk
+
+`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) GetBearerTokenOk() (*string, bool)`
+
+GetBearerTokenOk returns a tuple with the BearerToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBearerToken
+
+`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) SetBearerToken(v string)`
+
+SetBearerToken sets BearerToken field to given value.
+
+### HasBearerToken
+
+`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) HasBearerToken() bool`
+
+HasBearerToken returns a boolean if a field has been set.
 
 ### GetPreemptive
 

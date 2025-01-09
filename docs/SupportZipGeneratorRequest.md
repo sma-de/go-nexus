@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Replication** | Pointer to **bool** |  | [optional] 
 **LimitFileSizes** | Pointer to **bool** |  | [optional] 
 **LimitZipSize** | Pointer to **bool** |  | [optional] 
+**ArchivedLog** | Pointer to **int32** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -336,6 +337,31 @@ SetLimitZipSize sets LimitZipSize field to given value.
 `func (o *SupportZipGeneratorRequest) HasLimitZipSize() bool`
 
 HasLimitZipSize returns a boolean if a field has been set.
+
+### GetArchivedLog
+
+`func (o *SupportZipGeneratorRequest) GetArchivedLog() int32`
+
+GetArchivedLog returns the ArchivedLog field if non-nil, zero value otherwise.
+
+### GetArchivedLogOk
+
+`func (o *SupportZipGeneratorRequest) GetArchivedLogOk() (*int32, bool)`
+
+GetArchivedLogOk returns a tuple with the ArchivedLog field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedLog
+
+`func (o *SupportZipGeneratorRequest) SetArchivedLog(v int32)`
+
+SetArchivedLog sets ArchivedLog field to given value.
+
+### HasArchivedLog
+
+`func (o *SupportZipGeneratorRequest) HasArchivedLog() bool`
+
+HasArchivedLog returns a boolean if a field has been set.
 
 ### GetHostname
 

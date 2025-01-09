@@ -12,6 +12,7 @@ api_email.go
 api_formats.go
 api_lifecycle.go
 api_malicious_risk_on_disk.go
+api_malicious_risk_visualizer.go
 api_manage_sonatype_http_system_settings.go
 api_manage_sonatype_repository_firewall_configuration.go
 api_product_licensing.go
@@ -143,8 +144,11 @@ docs/IqAuditXo.md
 docs/IqConnectionVerificationXo.md
 docs/IqConnectionXo.md
 docs/LifecycleAPI.md
+docs/MaliciousRiskCountByEcosystem.md
 docs/MaliciousRiskOnDiskAPI.md
 docs/MaliciousRiskOnDiskCountResponse.md
+docs/MaliciousRiskSummaryResponse.md
+docs/MaliciousRiskVisualizerAPI.md
 docs/ManageSonatypeHTTPSystemSettingsAPI.md
 docs/ManageSonatypeRepositoryFirewallConfigurationAPI.md
 docs/MavenAttributes.md
@@ -352,7 +356,9 @@ model_http_settings_xo.go
 model_iq_audit_xo.go
 model_iq_connection_verification_xo.go
 model_iq_connection_xo.go
+model_malicious_risk_count_by_ecosystem.go
 model_malicious_risk_on_disk_count_response.go
+model_malicious_risk_summary_response.go
 model_maven_attributes.go
 model_maven_group_repository_api_request.go
 model_maven_hosted_api_repository.go
@@ -438,8 +444,5 @@ model_yum_hosted_repository_api_request.go
 model_yum_proxy_repository_api_request.go
 model_yum_signing_repositories_attributes.go
 response.go
-test/api_malicious_risk_on_disk_test.go
-test/api_manage_sonatype_http_system_settings_test.go
-test/api_security_management_secrets_encryption_test.go
-test/api_system_nodes_test.go
+test/api_malicious_risk_visualizer_test.go
 utils.go

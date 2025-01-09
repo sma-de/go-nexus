@@ -241,7 +241,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewGoogleCloudBlobstoreApiModel("gc_storage", *openapiclient.NewGoogleCloudBlobStoreApiBucketConfiguration(*openapiclient.NewGoogleCloudBlobStoreApiBucket("Name_example", "us-central1"))) // GoogleCloudBlobstoreApiModel |  (optional)
+	body := *openapiclient.NewGoogleCloudBlobstoreApiModel("gc_storage", *openapiclient.NewGoogleCloudBlobStoreApiBucketConfiguration(*openapiclient.NewGoogleCloudBlobStoreApiBucket("Name_example"))) // GoogleCloudBlobstoreApiModel |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1165,7 +1165,7 @@ import (
 
 func main() {
 	name := "name_example" // string | the name of the blobstore
-	body := *openapiclient.NewGoogleCloudBlobstoreApiModel("gc_storage", *openapiclient.NewGoogleCloudBlobStoreApiBucketConfiguration(*openapiclient.NewGoogleCloudBlobStoreApiBucket("Name_example", "us-central1"))) // GoogleCloudBlobstoreApiModel |  (optional)
+	body := *openapiclient.NewGoogleCloudBlobstoreApiModel("gc_storage", *openapiclient.NewGoogleCloudBlobStoreApiBucketConfiguration(*openapiclient.NewGoogleCloudBlobStoreApiBucket("Name_example"))) // GoogleCloudBlobstoreApiModel |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
